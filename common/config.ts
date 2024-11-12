@@ -1,6 +1,6 @@
 
 
-export interface GameConfig {
+export interface Config {
     tailwindColors: Record<string, Record<string, string>>; // Custom Tailwind color configuration
     brandName: string; // The name of the brand or application
     tagline: string; // A short tagline or slogan for the application
@@ -13,6 +13,6 @@ export interface GameConfig {
 }
 
 
-export function defineGameConfig(config: GameConfig): GameConfig {
+export function defineConfig(config: Config): Config {
     return config;
 }

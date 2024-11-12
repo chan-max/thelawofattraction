@@ -1,11 +1,11 @@
 import type { Config } from 'tailwindcss'
-import gameConfig from './game.config'
+import config from './config'
 
 export default <Partial<Config>>{
     theme: {
         extend: {
             colors: {
-                ...gameConfig.tailwindColors
+                ...config.tailwindColors
             }
         }
     }
