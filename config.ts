@@ -19,7 +19,8 @@ export default defineConfig({
     },
 
 
-    brandName: "吸引力法则",
+    siteName: "吸引力法则",
+    siteDescription:'这就是吸引力法则',
     tagline: '',
     apiKey: '',
     apiURL: '',

@@ -4,12 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --host 0.0.0.0",
+    "dev": "nuxt dev --host 0.0.0.0 --port 1234",
     "start": "node .output/server/index.mjs",
-    "generate": "nuxt generate",
+    "generate": "BASE_URL=https://thelawofattraction.com NODE_ENV=production nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "generate:prod": "BASE_URL=https://dravexispath.com NODE_ENV=production nuxt generate"
+    "generate:prod": "BASE_URL=https://thelawofattraction.com NODE_ENV=production nuxt generate"
   },
   "dependencies": {
     "@nuxt/image": "^1.6.0",

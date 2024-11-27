@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      title: `${config.brandName} - ${config.tagline}`,
+      title: `${config.siteName} - ${config.tagline}`,
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,12 +18,8 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: config.favicon },
-        { rel: 'preconnect', href: 'https://securepubads.g.doubleclick.net' },
-        { rel: 'dns-prefetch', href: 'https://securepubads.g.doubleclick.net' },
-        { rel: 'preload', href: 'https://www.googletagservices.com/tag/js/gpt.js', as: 'script' }
       ],
       script: [
-        { src: 'https://securepubads.g.doubleclick.net/tag/js/gpt.js', async: false, defer: false },
       ]
     }
   },
@@ -44,22 +40,27 @@ export default defineNuxtConfig({
     // '@zadigetvoltaire/nuxt-gtm',
     "@stefanobartoletti/nuxt-social-share"
   ],
-  // gtm: {
-  //   id: config.gtmID,
-  //   defer: false,
-  // },
   site: {
     url: process.env.BASE_URL || 'http://localhost:1234',
+    name: config.siteName,
+    description  :config.siteDescription,
+  },
+
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml'], // 指定需要生成的路由
+    },
   },
   sitemap: {
-    cacheMaxAgeSeconds: 60 * 60 * 24,
+    cacheMaxAgeSeconds: 60 * 60 * 24, // 秒
     xsl: false,
-    sitemaps: true,
+    sitemaps: false,
     autoLastmod: true,
     sources: [
-      '/api/__sitemap__/urls',
+      '/api/sitemap'
     ],
   },
+
   colorMode: {
     preference: 'light'
   },
