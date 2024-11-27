@@ -97,7 +97,16 @@
 </template>
 
 <script setup>
-// 中文优化版本的吸引力法则页面。
+useSeoMeta({
+  title: "吸引力法则 - 吸引成功与幸福的秘密",
+  ogTitle: "吸引力法则 - 吸引成功与幸福的秘密",
+  description:
+    "探索吸引力法则，学习如何通过正向思维和意图吸引成功、幸福和丰盛的生活。了解宇宙的力量，改变你的命运！",
+  ogDescription:
+    "探索吸引力法则的奥秘，通过正念和意图实现你的人生目标，开启成功与幸福的新篇章！",
+  ogImage: "https://example.com/law-of-attraction-image.png",
+  twitterCard: "summary_large_image",
+});
 </script>
 
 <style scoped>
