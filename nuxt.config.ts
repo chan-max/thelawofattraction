@@ -1,8 +1,8 @@
 import config from './config'
 
 export default defineNuxtConfig({
-  ssr: false,
-  // ssr:true,target:'static',
+  // ssr: false,
+  ssr: true,
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -20,6 +20,11 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: config.favicon },
       ],
       script: [
+        {
+          src: '/fullpage.js',
+          type: 'text/javascript',
+          defer: true,
+        }
       ]
     }
   },
@@ -32,7 +37,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  css: ['~/assets/main.scss'],
+  css: ['~/public/fullpage.css', '~/assets/main.scss', 'animate.css/animate.min.css',],
   modules: [
     '@nuxt/ui',
     '@nuxtjs/sitemap',
@@ -40,10 +45,11 @@ export default defineNuxtConfig({
     // '@zadigetvoltaire/nuxt-gtm',
     "@stefanobartoletti/nuxt-social-share"
   ],
+  plugins:[],
   site: {
     url: process.env.BASE_URL || 'http://localhost:1234',
     name: config.siteName,
-    description  :config.siteDescription,
+    description: config.siteDescription,
   },
 
   nitro: {
